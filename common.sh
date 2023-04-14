@@ -49,6 +49,7 @@ schema_setup() {
     print_head "Load Schema"
     mongo --host mongodb-dev.devops71a.online </app/schema/${component}.js &>>${log_file}
     status_check $?
+
   elif [ "${schema_type}" == "mysql" ]; then
     print_head "Install MySQL Client"
     yum install mysql -y &>>${log_file}
