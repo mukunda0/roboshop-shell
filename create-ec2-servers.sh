@@ -1,10 +1,9 @@
 #!/bin/bash
 
-##### Change these values ###
-ZONE_ID="	Z08747613MFS3WNPFXV8R"
+ZONE_ID="Z08747613MFS3WNPFXV8R"
 DOMAIN="devops71a.online"
 SG_NAME="allow-all"
-#############################
+
 
 
 
@@ -31,7 +30,6 @@ create_ec2() {
 }
 
 
-## Main Program
 AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=Centos-8-DevOps-Practice" | jq '.Images[].ImageId' | sed -e 's/"//g')
 if [ -z "${AMI_ID}" ]; then
   echo "AMI_ID not found"
