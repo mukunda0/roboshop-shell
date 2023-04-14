@@ -12,3 +12,6 @@ cp configs/catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
 systemctl enable catalogue
 systemctl start catalogue
+cp configs/mongodb.repo/ /etc/systemd/system/catalogue.service
+yum install mongodb-org-shell -y
+mongo --host mongodb.devops71a.online </app/schema/catalogue.js
